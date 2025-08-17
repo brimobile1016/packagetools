@@ -1,7 +1,7 @@
 export default function handler(req, res) {
   const plans = {
     "WHM Mini": {
-      resnumlimitamt: 15,
+      resnumlimitamt: 17,
       "acctlim-cPanel Mini": 7, "respkg-cPanel Mini": 1,
       "acctlim-cPanel Medium": 4, "respkg-cPanel Medium": 1,
       "acctlim-cPanel Extra": 3, "respkg-cPanel Extra": 1,
