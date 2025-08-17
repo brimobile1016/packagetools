@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Paket</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+  <h2>📦 Daftar Paket Hosting</h2>
+  <button id="lihatPaket">Lihat Paket</button>
+
+  <script>
+    document.getElementById("lihatPaket").addEventListener("click", function() {
+      fetch("/api/plans")
+        .then(res => res.json())
+        .then(data => {
+          if (data.status === "ok") {
+            let html = "<div style='text-align:left'>";
+            for (const [plan, details] of Object.entries(data.data)) {
+              html += `<h3>${plan}</h3><ul>`;
+              for (const [key, val] of Object.entries(details)) {
+                html += `<li>${key}: ${val}</li>`;
+              }
+              html += "</ul>";
+            }
+            html += "</div>";
+
+            Swal.fire({
+              title: "Daftar Paket",
+              html: html,
+              width: "700px",
+              scrollbarPadding: false
+            });
+          } else {
+            Swal.fire("Error", "Gagal ambil paket", "error");
+          }
+        })
+        .catch(err => {
+          Swal.fire("Error", err.message, "error");
+        });
+    });
+  </script>
+</body>
+</html>
