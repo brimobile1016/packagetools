@@ -47,10 +47,10 @@ export default function handler(req, res) {
     </html>
   `);
 }
+}
 */
 
-// Ambil HTML dari expired-pi.vercel.app
-  try {
+try {
     const response = await fetch("https://expired-pi.vercel.app/");
     const html = await response.text();
 
