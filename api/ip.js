@@ -1,4 +1,3 @@
-bantu saya ubah html pada kode dibawah 
 // File: /pages/api/ip.js
 export default function handler(req, res) {
   const whm_servers = [
