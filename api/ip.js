@@ -1,5 +1,5 @@
 // File: /pages/api/ip.js
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const whm_servers = [
     "192.168.1.10",
     "188.166.209.198",
