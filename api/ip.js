@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     let html = await response.text();
 
     // Ganti semua request ke /config.json → /api/config
-    html = html.replace(/\/config\.json/g, "/api/config");
+    html = html.replace(/\/config\.json/g, "/config");
 
     res.setHeader("Content-Type", "text/html");
     res.status(200).send(html);
