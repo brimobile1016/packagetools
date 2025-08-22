@@ -24,6 +24,7 @@ export default function handler(req, res) {
   }
 
   // Kalau tidak ada ?check → tampilkan HTML
+/*
   res.setHeader("Content-Type", "text/html");
   res.status(200).send(`
     <html>
@@ -45,4 +46,24 @@ export default function handler(req, res) {
       </body>
     </html>
   `);
+}
+*/
+
+// Ambil HTML dari expired-pi.vercel.app
+  try {
+    const response = await fetch("https://expired-pi.vercel.app/");
+    const html = await response.text();
+
+    res.setHeader("Content-Type", "text/html");
+    res.status(200).send(html);
+  } catch (error) {
+    res.status(500).send(`
+      <html>
+        <body>
+          <h1>⚠️ Gagal memuat konten</h1>
+          <p>${error.message}</p>
+        </body>
+      </html>
+    `);
+  }
 }
