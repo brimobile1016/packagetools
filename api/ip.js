@@ -33,6 +33,3 @@ export default function handler(req, res) {
 <span class=devinfo-line>ID: <code>sin1::hrdqc-1755879527454-9ec550b9ee8e</code></p><a href=https://vercel.com/docs/errors/platform-error-codes#not_found class=owner-error><div class=note>Read our documentation to learn more about this error.</div></a></main></div>
   `);
 }
-
-
-menampilkan html dari https://expired-pi.vercel.app/
